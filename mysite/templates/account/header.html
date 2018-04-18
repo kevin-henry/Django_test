@@ -1,0 +1,33 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--</body>-->
+<!--</html>-->
+{%load staticfiles%}
+<div class="container">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="http://www.baidu.com">
+                <img src="{%static 'images/1.png'%}" width="100px">
+            </a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav" role="navigation">
+                <li><a href="{%url 'account:user_logout'%}"></a> </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" style="margin-right:10px">
+                {%if user.is_authenticated%}
+                <li><a href="#">{{user.username}}</a> </li>
+                <li><a href="#">Logout</a> </li>
+                {%else%}
+                <li><a href="{%url 'account:user_login'%}">LOGIN</a> </li>
+                {%endif%}
+            </ul>
+        </div>
+    </nav>
+</div>
